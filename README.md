@@ -1,6 +1,6 @@
-Junction<img src="https://github.com/Adron/junction_design_assets/blob/master/Bashomen/kimono.png?raw=true" alt="Bashoman in Kimono" style="width: 120px; float: right;"/>
+Junction
 ========
-Junction - Windows 8 Interface for administration, management and data manipulation of Riak Clusters.
+<img src="https://github.com/Adron/junction_design_assets/blob/master/Bashomen/kimono.png?raw=true" alt="Bashoman in Kimono" style="width: 120px; float: right;"/>Junction - Windows 8 Interface for administration, management and data manipulation of Riak Clusters.
 
 Features:
 ---
