@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Junction.App">
-      <VisualElements DisplayName="Junction" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Junction is an administration, monitoring and data management interface for Riak." ForegroundText="light" BackgroundColor="#464646">
+      <VisualElements DisplayName="Junction" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Junction is an administration, monitoring, news and data management interface for Riak." ForegroundText="light" BackgroundColor="#464646">
         <DefaultTile ShowName="allLogos" ShortName="Junction" WideLogo="Assets\WideLogo.png" />
         <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="black" />
         <InitialRotationPreference>
