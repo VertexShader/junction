@@ -1,6 +1,6 @@
 Junction
 ========
-License: [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
+License: [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)<div style="float: right"><img src="http://photos.adron.me/Software/Software-Development/Estuary-Project/i-3Xxk8NH/0/O/Dashboard%20Goodness.jpg" /></div>
 
 Junction - Windows 8 Interface for administration, management and data manipulation of Riak Clusters.
 
