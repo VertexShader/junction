@@ -7,6 +7,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">    
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-
+        
+        
+        <StackPanel Height="400" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <GridView x:Name="ItemGridView2" Width="Auto" Height="Auto" Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
+     
+                BorderBrush="LightGray"
+                BorderThickness="1" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                ScrollViewer.HorizontalScrollBarVisibility="Auto" IsItemClickEnabled="True"
+                ItemClick="Scenario2_ItemClickHandler"/>
+            <TextBlock x:Name="OutputText" Margin="0,10,0,0"/>
+        </StackPanel>
     </Grid>
 </Page>
