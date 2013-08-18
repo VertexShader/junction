@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
 
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
@@ -28,20 +28,31 @@
           <li><a href="https://github.com/Adron/junction">View On <strong>GitHub</strong></a></li>
         </ul>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
         <script>
         jQuery.getFeed({
-           url: 'http://basho.com/category/blog/feed/atom/',
-           success: function(feed) {
-              alert(feed.title);
+           url     : FEED_URL,
+           success : function (feed) {
+              console.log(feed.title);
+              alert('got here');
            }
         });
+
+        $('#rss-viewer').append("stuff");
+
         </script>
+
+        <div id="rss-viewer">
+
+
+        </div>
+
+
       </header>
       <section>
         <h3>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome"><span class="octicon octicon-link"></span></a>Welcome to the Junction Project</h3>
+
+<iframe src="http://player.vimeo.com/video/72575375?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="420" height="236" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 <p>
 
