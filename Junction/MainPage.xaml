@@ -40,10 +40,15 @@
             TabIndex="1"
             Grid.RowSpan="2"
             Padding="116,136,116,46"
-            ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
-            ItemTemplate="{StaticResource Standard250x250ItemTemplate}"
             SelectionMode="None"
-            IsSwipeEnabled="false"/>
+            IsSwipeEnabled="false">
+            <GridViewItem Content="Call the Doctor!"/>
+            <FlipViewItem Content="Testing"/>
+            <GridViewItem Content="Time Travel That Data"/>
+            <GridViewItem Content="Love of the Data"/>
+            <GridViewItem Content="Golfing With Your Data"/>
+            <GridViewItem Background="Transparent" Content="News! News! News!"/>
+        </GridView>
 
         <!-- Vertical scrolling list only used when snapped -->
         <ListView
