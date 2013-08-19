@@ -107,7 +107,11 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\BindableBase.cs" />
+    <Compile Include="DataConverter.cs" />
     <Compile Include="DataModel\BashoData.cs" />
+    <Compile Include="FeedData.cs" />
+    <Compile Include="FeedDataSource.cs" />
+    <Compile Include="FeedItem.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
