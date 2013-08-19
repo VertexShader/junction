@@ -1,10 +1,4 @@
-﻿// The data model defined by this file serves as a representative example of a strongly-typed
-// model that supports notification when members are added, removed, or modified.  The property
-// names chosen coincide with data bindings in the standard item templates.
-//
-// Applications may use this model as a starting point and build on it, or discard it entirely and
-// replace it with something appropriate to their needs.
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -15,29 +9,25 @@ using Junction.Common;
 
 namespace Junction.DataModel
 {
-    /// <summary>
-    /// Base class for <see cref="SampleDataItem"/> and <see cref="SampleDataGroup"/> that
-    /// defines properties common to both.
-    /// </summary>
     [Windows.Foundation.Metadata.WebHostHidden]
     public abstract class SampleDataCommon : BindableBase
     {
-        private static Uri _baseUri = new Uri("ms-appx:///");
+        private static readonly Uri _baseUri = new Uri("ms-appx:///");
 
         public SampleDataCommon(String uniqueId, String title, String subtitle, String imagePath, String description)
         {
-            this._uniqueId = uniqueId;
-            this._title = title;
-            this._subtitle = subtitle;
-            this._description = description;
-            this._imagePath = imagePath;
+            _uniqueId = uniqueId;
+            _title = title;
+            _subtitle = subtitle;
+            _description = description;
+            _imagePath = imagePath;
         }
 
         private string _uniqueId = string.Empty;
         public string UniqueId
         {
-            get { return this._uniqueId; }
-            set { this.SetProperty(ref this._uniqueId, value); }
+            get { return _uniqueId; }
+            set { SetProperty(ref _uniqueId, value); }
         }
 
         private string _title = string.Empty;
@@ -94,36 +84,30 @@ namespace Junction.DataModel
         }
     }
 
-    /// <summary>
-    /// Generic item data model.
-    /// </summary>
     public class SampleDataItem : SampleDataCommon
     {
         public SampleDataItem(String uniqueId, String title, String subtitle, String imagePath, String description, String content, SampleDataGroup group)
             : base(uniqueId, title, subtitle, imagePath, description)
         {
-            this._content = content;
-            this._group = group;
+            _content = content;
+            _group = group;
         }
 
         private string _content = string.Empty;
         public string Content
         {
-            get { return this._content; }
-            set { this.SetProperty(ref this._content, value); }
+            get { return _content; }
+            set { SetProperty(ref _content, value); }
         }
 
         private SampleDataGroup _group;
         public SampleDataGroup Group
         {
-            get { return this._group; }
-            set { this.SetProperty(ref this._group, value); }
+            get { return _group; }
+            set { SetProperty(ref _group, value); }
         }
     }
 
-    /// <summary>
-    /// Generic group data model.
-    /// </summary>
     public class SampleDataGroup : SampleDataCommon
     {
         public SampleDataGroup(String uniqueId, String title, String subtitle, String imagePath, String description)
@@ -132,7 +116,7 @@ namespace Junction.DataModel
             Items.CollectionChanged += ItemsCollectionChanged;
         }
 
-        private void ItemsCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        private void ItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             // Provides a subset of the full items collection to bind to from a GroupedItemsPage
             // for two reasons: GridView will not virtualize large items collections, and it
@@ -250,7 +234,7 @@ namespace Junction.DataModel
 
         public SampleDataSource()
         {
-            String ITEM_CONTENT = String.Format("Item Content: {0}\n\n{0}\n\n{0}\n\n{0}\n\n{0}\n\n{0}\n\n{0}",
+            var itemContent = String.Format("Item Content: {0}\n\n{0}\n\n{0}\n\n{0}\n\n{0}\n\n{0}\n\n{0}",
                         "Curabitur class aliquam vestibulum nam curae maecenas sed integer cras phasellus suspendisse quisque donec dis praesent accumsan bibendum pellentesque condimentum adipiscing etiam consequat vivamus dictumst aliquam duis convallis scelerisque est parturient ullamcorper aliquet fusce suspendisse nunc hac eleifend amet blandit facilisi condimentum commodo scelerisque faucibus aenean ullamcorper ante mauris dignissim consectetuer nullam lorem vestibulum habitant conubia elementum pellentesque morbi facilisis arcu sollicitudin diam cubilia aptent vestibulum auctor eget dapibus pellentesque inceptos leo egestas interdum nulla consectetuer suspendisse adipiscing pellentesque proin lobortis sollicitudin augue elit mus congue fermentum parturient fringilla euismod feugiat");
 
             var group1 = new SampleDataGroup("Group-1",
@@ -263,37 +247,16 @@ namespace Junction.DataModel
                     "Item Subtitle: 1",
                     "Assets/LightGray.png",
                     "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
-                    ITEM_CONTENT,
+                    itemContent,
                     group1));
             group1.Items.Add(new SampleDataItem("Group-1-Item-2",
                     "Item Title: 2",
                     "Item Subtitle: 2",
                     "Assets/DarkGray.png",
                     "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
-                    ITEM_CONTENT,
+                    itemContent,
                     group1));
-            group1.Items.Add(new SampleDataItem("Group-1-Item-3",
-                    "Item Title: 3",
-                    "Item Subtitle: 3",
-                    "Assets/MediumGray.png",
-                    "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
-                    ITEM_CONTENT,
-                    group1));
-            group1.Items.Add(new SampleDataItem("Group-1-Item-4",
-                    "Item Title: 4",
-                    "Item Subtitle: 4",
-                    "Assets/DarkGray.png",
-                    "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
-                    ITEM_CONTENT,
-                    group1));
-            group1.Items.Add(new SampleDataItem("Group-1-Item-5",
-                    "Item Title: 5",
-                    "Item Subtitle: 5",
-                    "Assets/MediumGray.png",
-                    "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
-                    ITEM_CONTENT,
-                    group1));
-            this.AllGroups.Add(group1);
+            AllGroups.Add(group1);
 
             var group2 = new SampleDataGroup("Group-2",
                     "Group Title: 2",
@@ -305,23 +268,23 @@ namespace Junction.DataModel
                     "Item Subtitle: 1",
                     "Assets/DarkGray.png",
                     "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
-                    ITEM_CONTENT,
+                    itemContent,
                     group2));
             group2.Items.Add(new SampleDataItem("Group-2-Item-2",
                     "Item Title: 2",
                     "Item Subtitle: 2",
                     "Assets/MediumGray.png",
                     "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
-                    ITEM_CONTENT,
+                    itemContent,
                     group2));
             group2.Items.Add(new SampleDataItem("Group-2-Item-3",
                     "Item Title: 3",
                     "Item Subtitle: 3",
                     "Assets/LightGray.png",
                     "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
-                    ITEM_CONTENT,
+                    itemContent,
                     group2));
-            this.AllGroups.Add(group2);
+            AllGroups.Add(group2);
 
         }
     }
