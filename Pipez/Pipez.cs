@@ -2,5 +2,9 @@
 {
     public class Pipez
     {
+        public void Cheers()
+        {
+            
+        }
     }
 }
