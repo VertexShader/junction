@@ -33,22 +33,22 @@ namespace Junction.DataModel
         private string _title = string.Empty;
         public string Title
         {
-            get { return this._title; }
-            set { this.SetProperty(ref this._title, value); }
+            get { return _title; }
+            set { SetProperty(ref _title, value); }
         }
 
         private string _subtitle = string.Empty;
         public string Subtitle
         {
-            get { return this._subtitle; }
-            set { this.SetProperty(ref this._subtitle, value); }
+            get { return _subtitle; }
+            set { SetProperty(ref _subtitle, value); }
         }
 
         private string _description = string.Empty;
         public string Description
         {
-            get { return this._description; }
-            set { this.SetProperty(ref this._description, value); }
+            get { return _description; }
+            set { SetProperty(ref _description, value); }
         }
 
         private ImageSource _image = null;
@@ -57,30 +57,30 @@ namespace Junction.DataModel
         {
             get
             {
-                if (this._image == null && this._imagePath != null)
+                if (_image == null && _imagePath != null)
                 {
-                    this._image = new BitmapImage(new Uri(SampleDataCommon._baseUri, this._imagePath));
+                    _image = new BitmapImage(new Uri(SampleDataCommon._baseUri, _imagePath));
                 }
-                return this._image;
+                return _image;
             }
 
             set
             {
-                this._imagePath = null;
-                this.SetProperty(ref this._image, value);
+                _imagePath = null;
+                SetProperty(ref _image, value);
             }
         }
 
         public void SetImage(String path)
         {
-            this._image = null;
-            this._imagePath = path;
-            this.OnPropertyChanged("Image");
+            _image = null;
+            _imagePath = path;
+            OnPropertyChanged("Image");
         }
 
         public override string ToString()
         {
-            return this.Title;
+            return Title;
         }
     }
 
@@ -183,13 +183,13 @@ namespace Junction.DataModel
         private ObservableCollection<SampleDataItem> _items = new ObservableCollection<SampleDataItem>();
         public ObservableCollection<SampleDataItem> Items
         {
-            get { return this._items; }
+            get { return _items; }
         }
 
         private ObservableCollection<SampleDataItem> _topItem = new ObservableCollection<SampleDataItem>();
         public ObservableCollection<SampleDataItem> TopItems
         {
-            get {return this._topItem; }
+            get {return _topItem; }
         }
     }
 
@@ -206,7 +206,7 @@ namespace Junction.DataModel
         private ObservableCollection<SampleDataGroup> _allGroups = new ObservableCollection<SampleDataGroup>();
         public ObservableCollection<SampleDataGroup> AllGroups
         {
-            get { return this._allGroups; }
+            get { return _allGroups; }
         }
 
         public static IEnumerable<SampleDataGroup> GetGroups(string uniqueId)
