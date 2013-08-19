@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
 using System.Threading.Tasks;
-using Windows.ApplicationModel;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml;
@@ -59,22 +56,22 @@ namespace Junction.Common
         {
             try
             {
-                // Save the navigation state for all registered frames
-                foreach (var weakFrameReference in _registeredFrames)
+            // Save the navigation state for all registered frames
+            foreach (var weakFrameReference in _registeredFrames)
+            {
+                Frame frame;
+                if (weakFrameReference.TryGetTarget(out frame))
                 {
-                    Frame frame;
-                    if (weakFrameReference.TryGetTarget(out frame))
-                    {
-                        SaveFrameNavigationState(frame);
-                    }
+                    SaveFrameNavigationState(frame);
                 }
+            }
 
-                // Serialize the session state synchronously to avoid asynchronous access to shared
-                // state
-                MemoryStream sessionData = new MemoryStream();
-                DataContractSerializer serializer = new DataContractSerializer(typeof(Dictionary<string, object>), _knownTypes);
-                serializer.WriteObject(sessionData, _sessionState);
-
+            // Serialize the session state synchronously to avoid asynchronous access to shared
+            // state
+            MemoryStream sessionData = new MemoryStream();
+            DataContractSerializer serializer = new DataContractSerializer(typeof(Dictionary<string, object>), _knownTypes);
+            serializer.WriteObject(sessionData, _sessionState);
+            
                 // Get an output stream for the SessionState file and write the state asynchronously
                 StorageFile file = await ApplicationData.Current.LocalFolder.CreateFileAsync(sessionStateFilename, CreationCollisionOption.ReplaceExisting);
                 using (Stream fileStream = await file.OpenStreamForWriteAsync())
@@ -201,7 +198,7 @@ namespace Junction.Common
         /// page-specific state instead of working with frame session state directly.</remarks>
         /// <param name="frame">The instance for which session state is desired.</param>
         /// <returns>A collection of state subject to the same serialization mechanism as
-        /// <see cref="SessionState"/>.</returns>
+        /// <see cref="LayoutAwarePage"/>.</returns>
         public static Dictionary<String, Object> SessionStateForFrame(Frame frame)
         {
             var frameState = (Dictionary<String, Object>)frame.GetValue(FrameSessionStateProperty);
@@ -249,10 +246,9 @@ namespace Junction.Common
         {
         }
 
-        public SuspensionManagerException(Exception e)
-            : base("SuspensionManager failed", e)
+        public SuspensionManagerException(Exception e) : base("SuspensionManager failed", e)
         {
-
+            
         }
     }
 }
