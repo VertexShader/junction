@@ -14,7 +14,7 @@ namespace Junction
         {
             get
             {
-                return this._Items;
+                return _Items;
             }
         }
     }

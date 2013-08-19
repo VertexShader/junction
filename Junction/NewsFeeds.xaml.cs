@@ -1,17 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The Split Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234234
 
@@ -25,7 +16,7 @@ namespace Junction
     {
         public NewsFeeds()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         #region Page state management
@@ -41,24 +32,24 @@ namespace Junction
         /// session.  This will be null the first time a page is visited.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
-            // TODO: Assign a bindable group to this.DefaultViewModel["Group"]
-            // TODO: Assign a collection of bindable items to this.DefaultViewModel["Items"]
+            // TODO: Assign a bindable group to DefaultViewModel["Group"]
+            // TODO: Assign a collection of bindable items to DefaultViewModel["Items"]
 
             if (pageState == null)
             {
                 // When this is a new page, select the first item automatically unless logical page
                 // navigation is being used (see the logical page navigation #region below.)
-                if (!this.UsingLogicalPageNavigation() && this.itemsViewSource.View != null)
+                if (!UsingLogicalPageNavigation() && itemsViewSource.View != null)
                 {
-                    this.itemsViewSource.View.MoveCurrentToFirst();
+                    itemsViewSource.View.MoveCurrentToFirst();
                 }
             }
             else
             {
                 // Restore the previously saved state associated with this page
-                if (pageState.ContainsKey("SelectedItem") && this.itemsViewSource.View != null)
+                if (pageState.ContainsKey("SelectedItem") && itemsViewSource.View != null)
                 {
-                    // TODO: Invoke this.itemsViewSource.View.MoveCurrentTo() with the selected
+                    // TODO: Invoke itemsViewSource.View.MoveCurrentTo() with the selected
                     //       item as specified by the value of pageState["SelectedItem"]
                 }
             }
@@ -72,9 +63,9 @@ namespace Junction
         /// <param name="pageState">An empty dictionary to be populated with serializable state.</param>
         protected override void SaveState(Dictionary<String, Object> pageState)
         {
-            if (this.itemsViewSource.View != null)
+            if (itemsViewSource.View != null)
             {
-                var selectedItem = this.itemsViewSource.View.CurrentItem;
+                var selectedItem = itemsViewSource.View.CurrentItem;
                 // TODO: Derive a serializable navigation parameter and assign it to
                 //       pageState["SelectedItem"]
             }
@@ -121,7 +112,7 @@ namespace Junction
             // an item is selected this has the effect of changing from displaying the item list
             // to showing the selected item's details.  When the selection is cleared this has the
             // opposite effect.
-            if (this.UsingLogicalPageNavigation()) this.InvalidateVisualState();
+            if (UsingLogicalPageNavigation()) InvalidateVisualState();
         }
 
         /// <summary>
@@ -131,13 +122,13 @@ namespace Junction
         /// <param name="e">Event data that describes how the back button was clicked.</param>
         protected override void GoBack(object sender, RoutedEventArgs e)
         {
-            if (this.UsingLogicalPageNavigation() && itemListView.SelectedItem != null)
+            if (UsingLogicalPageNavigation() && itemListView.SelectedItem != null)
             {
                 // When logical page navigation is in effect and there's a selected item that
                 // item's details are currently displayed.  Clearing the selection will return to
                 // the item list.  From the user's point of view this is a logical backward
                 // navigation.
-                this.itemListView.SelectedItem = null;
+                itemListView.SelectedItem = null;
             }
             else
             {
@@ -158,9 +149,9 @@ namespace Junction
         protected override string DetermineVisualState(ApplicationViewState viewState)
         {
             // Update the back button's enabled state when the view state changes
-            var logicalPageBack = this.UsingLogicalPageNavigation(viewState) && this.itemListView.SelectedItem != null;
-            var physicalPageBack = this.Frame != null && this.Frame.CanGoBack;
-            this.DefaultViewModel["CanGoBack"] = logicalPageBack || physicalPageBack;
+            var logicalPageBack = UsingLogicalPageNavigation(viewState) && itemListView.SelectedItem != null;
+            var physicalPageBack = Frame != null && Frame.CanGoBack;
+            DefaultViewModel["CanGoBack"] = logicalPageBack || physicalPageBack;
 
             // Determine visual states for landscape layouts based not on the view state, but
             // on the width of the window.  This page has one layout that is appropriate for

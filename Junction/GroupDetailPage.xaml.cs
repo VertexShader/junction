@@ -25,7 +25,7 @@ namespace App1
     {
         public GroupDetailPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         /// <summary>
@@ -41,8 +41,8 @@ namespace App1
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
             var group = SampleDataSource.GetGroup((String)navigationParameter);
-            this.DefaultViewModel["Group"] = group;
-            this.DefaultViewModel["Items"] = group.Items;
+            DefaultViewModel["Group"] = group;
+            DefaultViewModel["Items"] = group.Items;
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace App1
             // Navigate to the appropriate destination page, configuring the new page
             // by passing required information as a navigation parameter
             var itemId = ((SampleDataItem)e.ClickedItem).UniqueId;
-            this.Frame.Navigate(typeof(ItemDetailPage), itemId);
+            Frame.Navigate(typeof(ItemDetailPage), itemId);
         }
     }
 }

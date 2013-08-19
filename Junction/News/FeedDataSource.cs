@@ -12,7 +12,7 @@ namespace Junction
         {
             get
             {
-                return this._Feeds;
+                return _Feeds;
             }
         }
 
@@ -23,8 +23,8 @@ namespace Junction
             Task<FeedData> feed10 =
                 GetFeedAsync("http://basho.com/blog/ato/");
 
-            this.Feeds.Add(await feed9);
-            this.Feeds.Add(await feed10);
+            Feeds.Add(await feed9);
+            Feeds.Add(await feed10);
         }
 
         private async Task<FeedData> GetFeedAsync(string feedUriString)

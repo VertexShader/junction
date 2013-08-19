@@ -25,7 +25,7 @@ namespace App1
     {
         public ItemDetailPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         /// <summary>
@@ -47,9 +47,9 @@ namespace App1
 
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
             var item = SampleDataSource.GetItem((String)navigationParameter);
-            this.DefaultViewModel["Group"] = item.Group;
-            this.DefaultViewModel["Items"] = item.Group.Items;
-            this.flipView.SelectedItem = item;
+            DefaultViewModel["Group"] = item.Group;
+            DefaultViewModel["Items"] = item.Group.Items;
+            flipView.SelectedItem = item;
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace App1
         /// <param name="pageState">An empty dictionary to be populated with serializable state.</param>
         protected override void SaveState(Dictionary<String, Object> pageState)
         {
-            var selectedItem = (SampleDataItem)this.flipView.SelectedItem;
+            var selectedItem = (SampleDataItem)flipView.SelectedItem;
             pageState["SelectedItem"] = selectedItem.UniqueId;
         }
     }
