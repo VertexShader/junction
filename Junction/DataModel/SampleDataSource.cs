@@ -43,55 +43,56 @@ namespace Junction.DataModel
             if (matches.Count() == 1) return matches.First();
             return null;
         }
-
+       
         public SampleDataSource()
         {
             var itemContent = String.Format("Item Content: {0}\n\n{0}\n\n{0}\n\n{0}\n\n{0}\n\n{0}\n\n{0}",
                         "Curabitur class aliquam vestibulum nam curae maecenas sed integer cras phasellus suspendisse quisque donec dis praesent accumsan bibendum pellentesque condimentum adipiscing etiam consequat vivamus dictumst aliquam duis convallis scelerisque est parturient ullamcorper aliquet fusce suspendisse nunc hac eleifend amet blandit facilisi condimentum commodo scelerisque faucibus aenean ullamcorper ante mauris dignissim consectetuer nullam lorem vestibulum habitant conubia elementum pellentesque morbi facilisis arcu sollicitudin diam cubilia aptent vestibulum auctor eget dapibus pellentesque inceptos leo egestas interdum nulla consectetuer suspendisse adipiscing pellentesque proin lobortis sollicitudin augue elit mus congue fermentum parturient fringilla euismod feugiat");
 
             var group1 = new SampleDataGroup("Group-1",
-                    "Group Title: 1",
-                    "Group Subtitle: 1",
+                    "Riak Admin, Query & Performance",
+                    "The stuff here...!",
                     "Assets/DarkGray.png",
                     "Group Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor scelerisque lorem in vehicula. Aliquam tincidunt, lacus ut sagittis tristique, turpis massa volutpat augue, eu rutrum ligula ante a ante");
             group1.Items.Add(new SampleDataItem("Group-1-Item-1",
-                    "Item Title: 1",
-                    "Item Subtitle: 1",
+                    "Query, Put, Deletes, Etc. Handling the CRUD",
+                    "Golfing With Your Data",
                     "Assets/LightGray.png",
                     "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
                     itemContent,
                     group1));
             group1.Items.Add(new SampleDataItem("Group-1-Item-2",
-                    "Item Title: 2",
-                    "Item Subtitle: 2",
+                    "Reporting",
+                    "Love of the Data",
                     "Assets/DarkGray.png",
                     "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
                     itemContent,
                     group1));
+            group1.Items.Add(new SampleDataItem("Group-1-Item-3",
+                    "Administration & Maintenance",
+                    "Call the Doctor!",
+                    "Assets/DarkGray.png",
+                    "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
+                    itemContent,
+                    group1));
+
             AllGroups.Add(group1);
 
             var group2 = new SampleDataGroup("Group-2",
-                    "Group Title: 2",
-                    "Group Subtitle: 2",
+                    "Benchmarking & News",
+                    "A section for stuff.",
                     "Assets/LightGray.png",
                     "Group Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor scelerisque lorem in vehicula. Aliquam tincidunt, lacus ut sagittis tristique, turpis massa volutpat augue, eu rutrum ligula ante a ante");
             group2.Items.Add(new SampleDataItem("Group-2-Item-1",
-                    "Item Title: 1",
-                    "Item Subtitle: 1",
+                    "Performance Benchmarking",
+                    "Time Travel That Data",
                     "Assets/DarkGray.png",
                     "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
                     itemContent,
                     group2));
             group2.Items.Add(new SampleDataItem("Group-2-Item-2",
-                    "Item Title: 2",
-                    "Item Subtitle: 2",
-                    "Assets/MediumGray.png",
-                    "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
-                    itemContent,
-                    group2));
-            group2.Items.Add(new SampleDataItem("Group-2-Item-3",
-                    "Item Title: 3",
-                    "Item Subtitle: 3",
+                    "News Reader",
+                    "News! News! News!",
                     "Assets/LightGray.png",
                     "Item Description: Pellentesque porta, mauris quis interdum vehicula, urna sapien ultrices velit, nec venenatis dui odio in augue. Cras posuere, enim a cursus convallis, neque turpis malesuada erat, ut adipiscing neque tortor ac erat.",
                     itemContent,
