@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 // The Group Detail Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234229
+using Junction;
 using Junction.Common;
 using Junction.DataModel;
 

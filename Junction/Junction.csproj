@@ -125,9 +125,6 @@
     <Compile Include="ItemDetailPage.xaml.cs">
       <DependentUpon>ItemDetailPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NewsFeeds.xaml.cs">
-      <DependentUpon>NewsFeeds.xaml</DependentUpon>
-    </Compile>
     <Compile Include="News\DataConverter.cs" />
     <Compile Include="News\FeedData.cs" />
     <Compile Include="News\FeedDataSource.cs" />
@@ -162,23 +159,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="NewsFeeds.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\BadgeLogo.scale-100.png" />
     <Content Include="Assets\BadgeLogo.scale-140.png" />
     <Content Include="Assets\BadgeLogo.scale-180.png" />
-    <Content Include="Assets\DarkGray.png" />
-    <Content Include="Assets\LightGray.png" />
-    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\DarkGrayDiagnose.png" />
+    <Content Include="Assets\DarkGrayGolfer.png" />
+    <Content Include="Assets\LightGrayKimono.png" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\Logo.scale-140.png" />
     <Content Include="Assets\Logo.scale-180.png" />
     <Content Include="Assets\Logo.scale-80.png" />
-    <Content Include="Assets\MediumGray.png" />
+    <Content Include="Assets\MediumGrayDrWho.png" />
+    <Content Include="Assets\MediumGrayLove.png" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SmallLogo.scale-140.png" />
