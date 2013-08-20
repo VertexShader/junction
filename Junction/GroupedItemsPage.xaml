@@ -1,6 +1,6 @@
 ﻿<common1:LayoutAwarePage
     x:Name="pageRoot"
-    x:Class="App1.GroupedItemsPage"
+    x:Class="Junction.GroupedItemsPage"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

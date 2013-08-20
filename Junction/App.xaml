@@ -1,8 +1,7 @@
 ﻿<Application
-    x:Class="App1.App"
+    x:Class="Junction.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:App1">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Application.Resources>
         <ResourceDictionary>
@@ -17,7 +16,7 @@
 
             <!-- Application-specific resources -->
 
-            <x:String x:Key="AppName">App1</x:String>
+            <x:String x:Key="AppName">Junction</x:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

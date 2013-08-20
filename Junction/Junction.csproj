@@ -125,9 +125,6 @@
     <Compile Include="ItemDetailPage.xaml.cs">
       <DependentUpon>ItemDetailPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NewsFeeds.xaml.cs">
-      <DependentUpon>NewsFeeds.xaml</DependentUpon>
-    </Compile>
     <Compile Include="News\DataConverter.cs" />
     <Compile Include="News\FeedData.cs" />
     <Compile Include="News\FeedDataSource.cs" />
@@ -161,10 +158,6 @@
     <Page Include="ItemDetailPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="NewsFeeds.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
